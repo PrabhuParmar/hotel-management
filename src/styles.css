@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+body {
+    font-family: 'Roboto Slab', serif !important;
+    background-color: var(--primary-light-blue) !important;
+}
+
+:root {
+    --light-blue: #2f3293;
+    --primary-orange: #de8f35;
+    --primary-light-blue: #9395dd;
+    --light-gray: #f0f0f0;
+    --primary-white: white;
+    --primary-red: red;
+}
+
+.form-error {
+    color: var(--primary-red);
+}
+
+/* loading animation css  */
+.loading-animation-img {
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 10px;
+    border-radius: 24px;
+    background-color: var(--primary-orange);
+}

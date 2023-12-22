@@ -1,0 +1,137 @@
+/* login form css start  */
+.login-form-section .login-container {
+    height: 100vh;
+    align-items: center;
+    justify-content: start;
+}
+
+.login-form-section .login-side-image {
+    float: left;
+    width: 50%;
+    height: 100vh;
+    animation: test 15s ease-in-out infinite;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+.login-form-section .login-form-data-section {
+    background-color: var(--primary-white);
+    padding: 30px;
+    height: 100vh;
+}
+
+.login-form-section .login-container .form-title {
+    color: var(--primary-black);
+    font-weight: 800;
+}
+
+.login-form-section .login-form-data-section .form-label {
+    color: var(--primary-blue);
+}
+
+.login-form-section .login-container .form-control {
+    width: 100%;
+    position: relative;
+    padding-left: 20px;
+    background: var(--light-gray);
+    border-radius: 12px;
+    border: transparent;
+    height: 42px;
+}
+
+.login-form-section .login-container .form-control::content {
+    color: var(--primary-blue);
+}
+
+.login-form-section .login-container .form-control:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.login-form-section .login-container .form-error {
+    color: var(--primary-red);
+}
+
+
+
+.login-form-section .login-form-image {
+    height: 100vh;
+    width: 100%;
+}
+
+/* btn css  */
+.login-form-section .login-container .submit-btn {
+    background-color: var(--primary-orange);
+    border: 2px solid var(--primary-orange);
+    color: var(--primary-white);
+    cursor: pointer;
+    font-weight: 500;
+    padding: 10px 36px;
+    position: relative;
+    border-radius: 24px;
+}
+
+.login-form-section .login-container .submit-btn:hover {
+    background-color: transparent;
+    color: var(--primary-orange);
+    border: 2px solid var(--primary-orange);
+}
+
+.login-form-section .login-container .submit-btn:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+    background-color: var(--primary-orange);
+    color: var(--primary-white);
+    border: 2px solid var(--primary-orange);
+}
+
+@media screen and (max-width:991.98px) {
+    .login-side-image {
+        display: none;
+    }
+
+    .login-form-section .login-form-data-section {
+        height: fit-content;
+        box-shadow: 4px 4px 79px -37px rgba(20, 21, 62, .64);
+        border-radius: 16px;
+    }
+
+    .login-form-section .login-container {
+        align-items: baseline;
+        justify-content: center;
+    }
+}
+
+
+/* set animation  */
+@keyframes test {
+    0% {
+        background-image: url('../../../../../assets/image/pexels-boonkong-boonpeng-1134176.jpg');
+    }
+
+    20% {
+        background-image: url('../../../../../assets/image/pexels-photomix-company-518244.jpg');
+    }
+
+    40% {
+        background-image: url('../../../../../assets/image/pexels-pixabay-164595.jpg');
+    }
+
+    60% {
+        background-image: url('../../../../../assets/image/pexels-pixabay-271624.jpg');
+    }
+
+    80% {
+        background-image: url('../../../../../assets/image/pexels-pixabay-53577.jpg');
+    }
+
+    100% {
+        background-image: url('../../../../../assets/image/pexels-quark-studio-2507007.jpg');
+    }
+}
+
+
+/* login form css end  */
