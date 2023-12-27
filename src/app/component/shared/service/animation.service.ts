@@ -7,6 +7,6 @@ import { Injectable } from '@angular/core';
 export class AnimationService {
 
     constructor() { }
-    animationPath = '../../../../../assets/image/Animation black dot - 1703077145414.json'
+    animationPath = '../../../../../assets/image/animation white dot.json'
 
 }

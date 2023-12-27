@@ -14,5 +14,4 @@ export class ListHotelComponent {
     this.hotelDataList = hotelListService.hotelList;
     this.loginId = localStorage.getItem('loginId');
   };
-
 }

@@ -7,7 +7,6 @@ import { Subject } from 'rxjs';
 })
 export class HotelService {
   hotelList: HotelInterface[] = [];
-
   // on add Hotel list 
   onAddHotel = (hotel: HotelInterface) => {
     let min = 100000;
@@ -19,7 +18,5 @@ export class HotelService {
       id: hostelId,
       numberOfRooms: hotel.room.length,
     });
-
   };
-
 };
