@@ -1,1 +1,59 @@
-<p>list-hotel works!</p>
+<!-- hotel list section start  -->
+<div class="container-fluid hotel-list-section">
+    <div class="row hotel-list-container mt-3">
+        <div class="col-12 table-responsive ">
+            <div class="col-5 mb-4">
+                <input type="text" placeholder="search hotel by name" class="form-control search-input">
+            </div>
+            <table class="table table-striped hotel-list-table-data">
+                <thead>
+                    <tr>
+                        <th scope="col" class="td-data">id</th>
+                        <th scope="col" class="td-name">Name</th>
+                        <th scope="col" class="td-data">City</th>
+                        <th scope="col" class="td-data">State</th>
+                        <th scope="col" class="td-data">Country</th>
+                        <th scope="col" class="td-address">Address</th>
+                        <th scope="col" class="td-action" *ngIf="loginId == 'admin'">Action</th>
+                        <th scope="col" class="td-book-hotel" *ngIf="loginId == 'user'">Book</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let hotel of hotelDataList">
+                        <td class="td-data"> {{hotel.id}} </td>
+                        <td class="td-name">{{hotel.name}} </td>
+                        <td class="td-data"> {{hotel.city}} </td>
+                        <td class="td-data">{{hotel.state}} </td>
+                        <td class="td-data">{{hotel.country}} </td>
+                        <td class="td-address"> {{hotel.address}} </td>
+                        <td class="action-img td-action" *ngIf="loginId == 'admin'">
+                            <div class="d-flex">
+                                <div>
+                                    <img src="../../../../../assets/image/icons8-edit-48.png"
+                                        class="edit-image table-data-img" placement="top" ngbTooltip="Edit">
+                                </div>
+                                <div class="ms-3" data-bs-toggle="modal" data-bs-target="#setDeleteItem">
+                                    <img src="../../../../../assets/image/icons8-delete-64.png"
+                                        class="delete-image table-data-img" placement="top" ngbTooltip="Delete">
+                                </div>
+                            </div>
+                        </td>
+                        <td class="action-img td-book-hotel" *ngIf="loginId == 'user'">
+                            <div class="d-flex">
+                                <div>
+                                    <img src="../../../../../assets/image/icons8-book-and-pencil-50.png"
+                                        class="edit-image table-data-img" placement="top" ngbTooltip="Book">
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div *ngIf="hotelDataList.length == 0" class="d-flex justify-content-center align-items-center empty-message-section">
+    <h3 class="empty-message">No Record Found!</h3>
+</div>
+
+<!-- hotel list section end  -->

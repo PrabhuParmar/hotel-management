@@ -1,1 +1,184 @@
-<p>add-edit-hotel works!</p>
+<!-- add & update Hotel details Form start -->
+<div class="add-edit-form-section my-3">
+    <div class="add-edit-form-container row g-0 d-flex justify-content-center align-items-center">
+        <div class="col-lg-10 col-md-8 col-sm-10 col-11">
+            <form class="form-section" [formGroup]="hotelFormDetails">
+                <div class="mb-3 d-flex justify-content-center align-items-center mb-3 mt-2">
+                    <h3 class="form-title">Add Hotel</h3>
+                </div>
+                <div class="d-flex flex-wrap row ">
+                    <div class="mb-3 col-lg-6 col-12">
+                        <label class="form-lable">Name</label>
+                        <input type="text" class="form-control form-input input hotel-input" formControlName="name">
+                        <div class="form-text"
+                            *ngIf="!hotelFormDetails.get('name')?.valid && hotelFormDetails.get('name')?.touched">
+                            <span *ngIf="hotelFormDetails.get('name')?.errors 
+                && hotelFormDetails.get('name')?.hasError('required') 
+                || hotelFormDetails.get('name')?.hasError('checkNameValue')" class="form-error">
+                                Name is required!
+                            </span>
+                            <span
+                                *ngIf="hotelFormDetails.get('name')?.errors && hotelFormDetails.get('name')?.hasError('pattern')"
+                                class="form-error">
+                                Please enter valid name
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-lg-6 col-12">
+                        <label class="form-lable">City</label>
+                        <input type="text" class="form-control form-input input hotel-input" formControlName="city">
+                        <div class="form-text"
+                            *ngIf="!hotelFormDetails.get('city')?.valid && hotelFormDetails.get('city')?.touched">
+                            <span *ngIf="hotelFormDetails.get('city')?.errors 
+                && hotelFormDetails.get('city')?.hasError('required') 
+                || hotelFormDetails.get('city')?.hasError('checkNameValue')" class="form-error">
+                                City is required!
+                            </span>
+                            <span
+                                *ngIf="hotelFormDetails.get('city')?.errors && hotelFormDetails.get('city')?.hasError('pattern')"
+                                class="form-error">
+                                Please enter valid city name, only characters allowed
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-lg-6 col-12">
+                        <label class="form-lable">State</label>
+                        <input type="text" class="form-control form-input input hotel-input" formControlName="state">
+                        <div class="form-text"
+                            *ngIf="!hotelFormDetails.get('state')?.valid && hotelFormDetails.get('state')?.touched">
+                            <span *ngIf="hotelFormDetails.get('state')?.errors 
+                && hotelFormDetails.get('state')?.hasError('required') 
+                || hotelFormDetails.get('state')?.hasError('checkNameValue')" class="form-error">
+                                State is required!
+                            </span>
+                            <span
+                                *ngIf="hotelFormDetails.get('state')?.errors && hotelFormDetails.get('state')?.hasError('pattern')"
+                                class="form-error">
+                                Please enter valid state name, only characters allowed
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-lg-6 col-12">
+                        <label class="form-lable">Country</label>
+                        <select class="form-select form-input" formControlName="country">
+                            <option value="india">India</option>
+                            <option value="America">America</option>
+                            <option value="Afghanistan">Afghanistan</option>
+                            <option value="Russia">Russia</option>
+                            <option value="canada">canada</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 col-lg-12 col-12">
+                        <label class="form-lable">Address</label>
+                        <textarea class="form-control form-input" formControlName="address" rows=""></textarea>
+                        <div class="form-text"
+                            *ngIf="!hotelFormDetails.get('address')?.valid && hotelFormDetails.get('address')?.touched">
+                            <span *ngIf="hotelFormDetails.get('address')?.errors 
+                && hotelFormDetails.get('address')?.hasError('required') 
+                || hotelFormDetails.get('address')?.hasError('checkNameValue')" class="form-error">
+                                Address is required!
+                            </span>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-lg-12 col-12 room-btn-section d-flex">
+                        <label for="" class="form-lable room-lable">Number Of Rooms</label>
+                        <div class="d-flex justify-content-start">
+                            <button type="button" class="btn add-room-increement-btn" (click)="roomDecreement()"
+                                [disabled]="roomDetails.controls.length <=1"> <img
+                                    src=" ../../../../../assets/image/icons8-minus-24.png" class="quantity-img-icon">
+                            </button>
+                            <span class="hotel-room-quantity d-flex justify-content-center align-items-center ">
+                                {{roomDetails.controls.length}} </span>
+                            <button type="button" class="btn add-room-increement-btn" (click)="roomIncreement()"
+                                [disabled]="roomDetails.controls.length >=3"> <img
+                                    src="../../../../../assets/image/icons8-plus-24.png" class="quantity-img-icon">
+                            </button>
+
+                        </div>
+
+                    </div>
+                    <div class="col-lg-12 " formArrayName="room">
+                        <div *ngFor="let room of roomDetails.controls let item=index" [formGroupName]="item"
+                            class="d-flex justify-content-start row flex-wrap">
+                            <div class="col-lg-6 col-sm-12 col-12 mb-3 ">
+                                <label class="form-lable">Room Number </label>
+                                <input type="number" class="form-control form-input hotel-input"
+                                    formControlName="roomNumber">
+                                <div class="form-text"
+                                    *ngIf="!room.get('roomNumber')?.valid && room.get('roomNumber')?.touched">
+                                    <span *ngIf="room.get('roomNumber')?.errors 
+                && room.get('roomNumber')?.hasError('required') 
+               " class="form-error">
+                                        Room number is required!
+                                    </span>
+                                    <div
+                                        *ngIf="room.get('roomNumber')?.value !== null && room.get('roomNumber')?.value !== '' ">
+                                        <span
+                                            *ngIf="room.get('roomNumber')?.errors  && room.get('roomNumber')?.hasError('roomStatus') "
+                                            class="form-error">
+                                            Please enter valid room number
+                                        </span>
+                                        <div *ngIf="!room.get('roomNumber')?.hasError('roomStatus')">
+                                            <span
+                                                *ngIf="room.get('roomNumber')?.errors  && room.get('roomNumber')?.hasError('roomNumberMatch') "
+                                                class="form-error">
+                                                Room number already exists, please try with another room number
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-sm-12 col-12 mb-3 ">
+                                <label class="form-lable">Room Price </label>
+                                <div class="">
+                                    <div class="row d-flex">
+                                        <div class=" col-sm-11 col-10 pe-5">
+                                            <input type="number" class="form-control form-input hotel-input"
+                                                formControlName="roomPrice">
+                                        </div>
+                                        <div class="d-flex justify-content-end col-sm-1 col-2  ">
+                                            <button type="button" class="btn btn-danger  remove-room-btn"
+                                                (click)="removeRoom(item)" [disabled]="roomDetails.controls.length==1"
+                                                [placement]="['top','right']" ngbTooltip="Remove">
+                                                <img src="../../../../../assets/image/icons8-remove-24.png"
+                                                    class="remove-icon">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="form-text"
+                                        *ngIf="!room.get('roomPrice')?.valid && room.get('roomPrice')?.touched">
+                                        <span
+                                            *ngIf="room.get('roomPrice')?.errors  && room.get('roomPrice')?.hasError('required') "
+                                            class="form-error">
+                                            Room price is required!
+                                        </span>
+                                        <div
+                                            *ngIf="room.get('roomPrice')?.value !== null && room.get('roomPrice')?.value !== '' ">
+                                            <span
+                                                *ngIf="room.get('roomPrice')?.errors  && room.get('roomPrice')?.hasError('roomStatus') "
+                                                class="form-error">
+                                                Please enter valid room price
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-section d-flex justify-content-center align-items-center mt-4">
+                        <button type="button" class="submit-btn" (click)="submitHotelDetails()"
+                            [disabled]="!roomDetails.valid">Submit
+                            <span *ngIf="animationShow">
+                                <ng-lottie [options]="AnimationOptions"
+                                    class="d-flex justify-content-center loading-animation-img">
+                                </ng-lottie>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- add & update Hotel details Form End -->

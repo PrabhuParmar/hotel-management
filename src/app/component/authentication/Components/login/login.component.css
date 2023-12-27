@@ -62,31 +62,6 @@
     width: 100%;
 }
 
-/* btn css  */
-.login-form-section .login-container .submit-btn {
-    background-color: var(--primary-orange);
-    border: 2px solid var(--primary-orange);
-    color: var(--primary-white);
-    cursor: pointer;
-    font-weight: 500;
-    padding: 10px 36px;
-    position: relative;
-    border-radius: 24px;
-}
-
-.login-form-section .login-container .submit-btn:hover {
-    background-color: transparent;
-    color: var(--primary-orange);
-    border: 2px solid var(--primary-orange);
-}
-
-.login-form-section .login-container .submit-btn:disabled {
-    cursor: not-allowed;
-    pointer-events: all !important;
-    background-color: var(--primary-orange);
-    color: var(--primary-white);
-    border: 2px solid var(--primary-orange);
-}
 
 @media screen and (max-width:991.98px) {
     .login-side-image {

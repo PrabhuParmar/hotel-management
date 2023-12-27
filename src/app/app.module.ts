@@ -10,6 +10,7 @@ import { LottieModule } from 'ngx-lottie';
 import { ToastrModule, provideToastr } from 'ngx-toastr';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 export function playerFactory(): any {
   return import('lottie-web');
@@ -27,6 +28,7 @@ export function playerFactory(): any {
     LottieModule.forRoot({ player: playerFactory }),
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    NgbModule,
 
   ],
   providers: [provideAnimations(), provideToastr()],

@@ -1,0 +1,47 @@
+/* hotel list css start  */
+.hotel-list-section .hotel-list-container .td-action,
+.hotel-list-section .hotel-list-container .td-book-hotel {
+    min-width: 120px;
+}
+
+.hotel-list-section .hotel-list-container .td-data {
+    min-width: 110px;
+    word-break: break-word;
+}
+
+.hotel-list-section .hotel-list-container .td-name {
+    min-width: 150px;
+    word-break: break-word;
+}
+
+.hotel-list-section .hotel-list-container .table-data-img {
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.hotel-list-section .hotel-list-container .td-address {
+    min-width: 300px;
+    word-break: break-word;
+}
+
+.hotel-list-section .hotel-list-container .search-input {
+    border: transparent;
+    height: 40px;
+}
+
+.hotel-list-section .hotel-list-container .search-input:focus {
+    box-shadow: none;
+    border: transparent;
+}
+
+/* error message  */
+.empty-message {
+    opacity: 0.5;
+}
+
+.empty-message-section {
+    height: calc(100vh - 155px);
+}
+
+/* hotel list css end  */

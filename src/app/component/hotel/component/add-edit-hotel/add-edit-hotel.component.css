@@ -1,0 +1,112 @@
+/* add edit form css start  */
+.add-edit-form-section .add-edit-form-container .form-section {
+    background-color: var(--primary-white);
+    padding: 24px;
+    border-radius: 24px;
+}
+
+.add-edit-form-section .add-edit-form-container {
+    height: calc(100vh - 136px);
+
+}
+
+.add-edit-form-section .add-edit-form-container .form-title {
+    font-weight: 600;
+}
+
+
+.add-edit-form-section .add-edit-form-container .form-control {
+    width: 100%;
+    position: relative;
+    padding-left: 20px;
+    background: var(--light-gray);
+    border-radius: 12px;
+    border: transparent;
+
+}
+
+.add-edit-form-section .add-edit-form-container .hotel-input {
+    height: 42px;
+}
+
+.add-edit-form-section .add-edit-form-container .form-input:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.add-edit-form-section .add-edit-form-container .form-select {
+    background-color: var(--light-gray);
+    border: transparent;
+    height: 42px;
+    cursor: pointer;
+}
+
+.add-edit-form-section .add-edit-form-container .form-lable {
+    margin-bottom: 7px;
+}
+
+.add-edit-form-section .add-edit-form-container .add-room-increement-btn {
+    background-color: var(--light-gray);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+    border: transparent;
+}
+
+.add-edit-form-section .add-edit-form-container .add-room-increement-btn:focus {
+    border: transparent;
+}
+
+.add-edit-form-section .add-edit-form-container .hotel-room-quantity {
+    width: 70px;
+}
+
+.add-edit-form-section .add-edit-form-container .add-room-increement-btn .quantity-img-icon {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    opacity: 0.8;
+}
+
+.add-edit-form-section .add-edit-form-container .add-room-increement-btn:disabled,
+.add-edit-form-section .add-edit-form-container .remove-room-btn:disabled {
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
+
+.add-edit-form-section .add-edit-form-container .remove-room-btn .remove-icon {
+    height: 20px;
+    width: 20px;
+}
+
+.add-edit-form-section .add-edit-form-container .room-btn-section {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 7px;
+}
+
+.add-edit-form-section .add-edit-form-container .room-lable {
+    margin: 0 !important;
+    margin-right: 15px !important;
+}
+
+
+
+@media screen and (max-width:420px) {
+    .add-edit-form-section .add-edit-form-container .room-btn-section {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 0;
+    }
+
+    .add-edit-form-section .add-edit-form-container .room-lable {
+        margin-bottom: 7px !important;
+    }
+}
+
+
+/* add edit form css end  */
